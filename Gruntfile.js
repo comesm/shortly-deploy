@@ -113,7 +113,7 @@ module.exports = function(grunt) {
   ////////////////////////////////////////////////////
   // Main grunt tasks
   ////////////////////////////////////////////////////
-/////
+//////
   grunt.registerTask('test', ['eslint', 'mochaTest']);
 
   grunt.registerTask('build', ['test', 'concat', 'uglify']);
