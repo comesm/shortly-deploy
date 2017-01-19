@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
+      options: {separator: ';'}
     },
 
     mochaTest: {
@@ -31,7 +32,7 @@ module.exports = function(grunt) {
 
     cssmin: {
     },
-
+//
     watch: {
       scripts: {
         files: [
@@ -81,13 +82,18 @@ module.exports = function(grunt) {
 
   grunt.registerTask('upload', function(n) {
     if (grunt.option('prod')) {
+      //deploy into production
+
+
+      //console.log('hey Im the prod option');
+      //console.log('')
       // add your production server task here
     } else {
       grunt.task.run([ 'server-dev' ]);
     }
   });
 
-  grunt.registerTask('deploy', [
+  grunt.registerTask('deploy', ['test'
     // add your deploy tasks here
   ]);
 
