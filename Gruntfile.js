@@ -87,7 +87,9 @@ module.exports = function(grunt) {
       origin: {
         command: 'git push origin master'
       },
-
+      mike: {
+        command: 'git push mike master'
+      },
 
       prodServer: {
         command: 'git push live master'
@@ -124,7 +126,7 @@ module.exports = function(grunt) {
       grunt.task.run(['shell:prodServer']);
 
     } else if (grunt.option('dev')) {
-      grunt.task.run(['shell:origin']);
+      grunt.task.run(['shell:origin', 'shell:mike']);
     }
 
     // grunt.task.run([ 'server-dev' ]);
