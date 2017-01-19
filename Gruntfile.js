@@ -123,16 +123,16 @@ module.exports = function(grunt) {
     if (grunt.option('prod')) {
       grunt.task.run(['shell:prodServer']);
 
-    } else if (grunt.option('develop')) {
+    } else if (grunt.option('dev')) {
       grunt.task.run(['shell:origin']);
     }
 
     // grunt.task.run([ 'server-dev' ]);
   });
 
-  grunt.registerTask('deploy', ['upload'    // add your deploy tasks here
-  ]);
+  // grunt.registerTask('deploy', ['upload'    // add your deploy tasks here
+  // ]);
 
-  grunt.registerTask('dev', ['upload develop'    // add your deploy tasks here
-  ]);
+  // grunt.registerTask('dev', ['upload --prod'    // add your deploy tasks here
+  // ]);
 };
